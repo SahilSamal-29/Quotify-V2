@@ -1,8 +1,12 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("org.jetbrains.kotlin.kapt")
+//    id("org.jetbrains.kotlin.kapt")
 }
+
+val OPENAI_API_KEY = gradleLocalProperties(rootDir, providers).getProperty("OPENAI_API_KEY", "")
 
 android {
     namespace = "com.example.quotify_v2"
@@ -11,14 +15,24 @@ android {
     defaultConfig {
         applicationId = "com.example.quotify_v2"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        resValue(
+            "string",
+            "OPENAI_API_KEY",
+            "\""+OPENAI_API_KEY+"\""
+        )
+
+//        val api_key = System.getenv("OPENAI_API_KEY")
+//        buildConfigField("String", "OPENAI_API_KEY", api_key)
     }
     buildFeatures{
         dataBinding = true
+        buildConfig = true
     }
 
     buildTypes {
@@ -54,7 +68,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.room.runtime)
-    kapt(libs.androidx.room.compiler)
+//    kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.recyclerview)
 

@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private val shareButton: FloatingActionButton get() = findViewById(R.id.shareButton)
     private val searchButton: Button get() = findViewById(R.id.searchButton)
     private val searchInput: TextView get() = findViewById(R.id.searchInput)
-    private val apiKey = BuildConfig.OPENAI_API_KEY
+//    private val apiKey = BuildConfig.OPENAI_API_KEY
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
 
             try {
                 val response = apiService.generateQuotes(
-                    apiKey = "Authorization: Bearer $apiKey",
+                    apiKey = getString(R.string.OPENAI_API_KEY),
                     request = AIRequest(prompt = "Generate 5 quotes about $query")
                 )
                 if (response.choices.isNotEmpty()) {
