@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private val shareButton: FloatingActionButton get() = findViewById(R.id.shareButton)
     private val searchButton: Button get() = findViewById(R.id.searchButton)
     private val searchInput: TextView get() = findViewById(R.id.searchInput)
-//    private val apiKey = BuildConfig.OPENAI_API_KEY
+//    private val client = OkHttpClient.Builder()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,6 +80,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun fetchAIQuotes(query: String) {
+        val apiKey = getString(R.string.OPENAI_API_KEY)
         CoroutineScope(Dispatchers.IO).launch {
             val apiService = Retrofit.Builder()
                 .baseUrl("https://api.openai.com/")
@@ -89,7 +90,7 @@ class MainActivity : AppCompatActivity() {
 
             try {
                 val response = apiService.generateQuotes(
-                    apiKey = "Bearer getString(R.string.OPENAI_API_KEY)",
+                    apiKey = "Bearer $apiKey",
                     request = AIRequest(prompt = "Generate 5 quotes about $query")
                 )
                 if (response.choices.isNotEmpty()) {
