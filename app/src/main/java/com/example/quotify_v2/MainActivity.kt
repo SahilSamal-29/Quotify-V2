@@ -85,11 +85,11 @@ class MainActivity : AppCompatActivity() {
                 .baseUrl("https://api.openai.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(QuotesApi::class.java)
+                .create(AIQuoteService::class.java)
 
             try {
                 val response = apiService.generateQuotes(
-                    apiKey = getString(R.string.OPENAI_API_KEY),
+                    apiKey = "Bearer getString(R.string.OPENAI_API_KEY)",
                     request = AIRequest(prompt = "Generate 5 quotes about $query")
                 )
                 if (response.choices.isNotEmpty()) {

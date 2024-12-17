@@ -73,6 +73,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -84,12 +85,11 @@
             android:id="@+id/previous"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:layout_weight="1"
             android:drawableStart="@drawable/ic_left_arrow"
             android:drawableTint="#80FFFFFF"
             android:text="PREVIOUS"
-            android:onClick="onPrevious"
-            android:layout_marginBottom="30dp"
             android:textColor="#80FFFFFF"
             android:textSize="18sp" />
 
@@ -101,22 +101,44 @@
             android:drawableEnd="@drawable/ic_arrow"
             android:drawableTint="#80FFFFFF"
             android:text="NEXT"
-            android:onClick="onNext"
             android:textAlignment="textEnd"
             android:textColor="#80FFFFFF"
             android:textSize="18sp" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter your query" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search" />
+    </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/shareButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:layout_marginRight="24dp"
         app:backgroundTint="#808080"
-        android:onClick="onShare"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/ic_share" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
