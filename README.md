@@ -1,6 +1,6 @@
 # Quotify-V2
 
-Quotify-V2 is an advanced version of the Quotify app designed to provide an immersive quote exploration experience. The app leverages a JSON API to fetch inspirational and motivational quotes and integrates AI functionalities to generate personalized quotes based on user queries. However, the AI quote generation feature is currently encountering a `404 error` and is under debugging.
+Quotify-V2 is an advanced version of the Quotify where instead of locally stored api quotes are fetched from remote with the help of retrofit. The app leverages a JSON API to fetch inspirational and motivational quotes and integrates AI functionalities to generate personalized quotes based on user queries. However, the AI quote generation feature is currently encountering a `404 error` and is under debugging.
 
 ---
 
