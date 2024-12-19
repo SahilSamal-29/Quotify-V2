@@ -6,8 +6,8 @@ Quotify-V2 is an advanced version of the Quotify app designed to provide an imme
 
 ## Visual Representation
 
-![Screenshot_20241219_143733](https://github.com/user-attachments/assets/5e60e3bb-717b-43ce-9c9a-819275745b87)
-![Screenshot_20241219_171005](https://github.com/user-attachments/assets/3ac0d0e1-293c-4339-84c5-479da392c795)
+<img src="https://github.com/user-attachments/assets/5e60e3bb-717b-43ce-9c9a-819275745b87" alt="Screenshot" width="250">
+<img src="https://github.com/user-attachments/assets/3ac0d0e1-293c-4339-84c5-479da392c795" alt="Screenshot" width="250">
 
 ## Features
 
